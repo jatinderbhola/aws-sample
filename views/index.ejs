@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/aws-sample.css' />
+    <script src='/javascripts/aws-sample-packages.js'></script>
+    <script src='/javascripts/aws-sample.js'></script>
+</head>
+
+<body ng-app="aws-sample">
+    <div ng-controller="MainController">
+    </div>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Welcome to
+        <%= title %>
+    </p>
+
+    <button onclick="">Create Bucket</button>
+    <md-button>a</md-button>
+    <div>
+        <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+    </div>
+</body>
+
+</html>
