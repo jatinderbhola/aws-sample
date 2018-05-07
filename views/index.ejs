@@ -12,26 +12,34 @@
 
 <body ng-app="aws-sample">
     <div ng-controller="MainController">
-    </div>
-    <h1>
-        <%= title %>
-    </h1>
-    <p>Welcome to
-        <%= title %>
-    </p>
+        <h1>
+            <%= title %>
+        </h1>
+        <p>Welcome to
+            <%= title %>
+        </p>
 
-    <button onclick="">Create Bucket</button>
-    <md-button>a</md-button>
-    <div>
-        <md-input-container>
-            <label>Title</label>
-            <input ng-model="user.title">
-        </md-input-container>
+        <md-button class="md-primary md-raised" ng-click="authentication()"> Check API tokens</md-button>
 
-        <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" type="email">
-        </md-input-container>
+        <md-button class="md-primary md-raised" ng-click="createBucket()"> create bucket</md-button>
+        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+            <div>
+                <md-input-container>
+                    <label>Title</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email">
+                </md-input-container>
+            </div>
+        </md-content>
+        <md-button class="md-primary md-raised" ng-click="createBucket()"> list buckets</md-button>
+
+
+        <md-button class="md-primary md-raised" ng-click="createBucket()"> upload file</md-button>
+        <md-button class="md-primary md-raised" ng-click="createBucket()"> list file</md-button>
     </div>
 </body>
 

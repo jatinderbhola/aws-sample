@@ -7,6 +7,7 @@ module.exports = function(grunt) {
             build: {
                 "src": [
                     "front-end/*.js",
+                    "front-end/controller/*.js"
                 ],
                 "dest": "public/javascripts/aws-sample.js"
             },
@@ -30,8 +31,9 @@ module.exports = function(grunt) {
         }
     });
 
-    // Load required modules
+    // Load required modules //uglify
     grunt.loadNpmTasks('grunt-contrib-concat');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Task definitions
     grunt.registerTask('default', ['concat']);
