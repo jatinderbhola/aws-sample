@@ -7,11 +7,13 @@
         "dev": "node --debug=12345 app.js"
     },
     "dependencies": {
+        "@uirouter/angularjs": "^1.0.16",
         "angular": "^1.6.10",
         "angular-animate": "^1.6.10",
         "angular-aria": "^1.6.10",
         "angular-material": "^1.1.9",
         "angular-messages": "^1.6.10",
+        "angular-ui-router": "^1.0.3",
         "aws-sdk": "^2.233.1",
         "cookie-parser": "~1.4.3",
         "debug": "~2.6.9",

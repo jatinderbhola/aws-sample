@@ -19,27 +19,14 @@
             <%= title %>
         </p>
 
-        <md-button class="md-primary md-raised" ng-click="checkAuthRequest()" ng-if="!toggleAuthContainer"> Check API tokens</md-button>
-
-        <md-button class="md-primary md-raised" ng-click="createBucket()"> create bucket</md-button>
-        <div layout-gt-sm="row" ng-if="toggleAuthContainer">
-            <div>
-                <md-input-container>
-                    <label>API KEY</label>
-                    <input ng-model="amazon.apiKey" required>
-                </md-input-container>
-                <md-input-container>
-                    <label>API TOKEN</label>
-                    <input ng-model="amazon.apiToken" required>
-                </md-input-container>
-            </div>
-            <md-button class="md-primary md-raised" ng-click="authentication()"> Auth</md-button>
+        <div layout-gt-sm="row">
+            <md-button class="md-primary md-raised" ng-click="gotoState('home')"> home</md-button>
+            <md-button class="md-primary md-raised" ng-click="gotoState('auth')"> Authentication</md-button>
+            <md-button class="md-primary md-raised" ng-click="gotoState('list-buckets')"> list buckets</md-button>
+            <md-button class="md-primary md-raised" ng-click="gotoState()"> upload file</md-button>
+            <md-button class="md-primary md-raised" ng-click="gotoState()"> list file</md-button>
         </div>
-        <md-button class="md-primary md-raised" ng-click="createBucket()"> list buckets</md-button>
-
-
-        <md-button class="md-primary md-raised" ng-click="createBucket()"> upload file</md-button>
-        <md-button class="md-primary md-raised" ng-click="createBucket()"> list file</md-button>
+        <ui-view></ui-view>
     </div>
 </body>
 

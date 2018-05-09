@@ -9,7 +9,4 @@ var s3 = new AWS.S3({
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'AWS FUNCTION!' });
 });
-router.post('/createbucket', function(req, res, next) {
-
-});
 module.exports = router;

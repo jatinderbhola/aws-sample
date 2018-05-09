@@ -1,41 +1,32 @@
 angular.module('aws-sample')
 
-.controller('MainController', function($scope, $http, $mdToast) {
+.controller('MainController', function($scope, $http, $mdToast, $state) {
     console.log('main controller calling');
 
-    $scope.toggleAuthContainer = false;
-    $scope.amazon = {};
-    // authenticate the aws api token and key
-    $scope.authentication = function() {
-        if (!$scope.amazon.apiKey) {
-            toastMsg("Enter api key! Required Field");
+    $scope.gotoState = function(state) { //"home"
+        if (state === 'auth') {
+            // get the list of buckets
+            var listData = [{
+                    "name": "John",
+                    "age": 303,
+                    "cars": ["Ford", "BMW", "Fiat"]
+                },
+                {
+                    "name": "Johan",
+                    "age": 302,
+                    "cars": ["Ford", "BMW", "Fiat"]
+                }, {
+                    "name": "Johssn",
+                    "age": 303,
+                    "cars": ["Foasdrd", "BMW", "Fiat"]
+                }
+            ];
+            $state.go(state, { listData: listData, listType: 'bucket' });
             return;
         }
 
-        if (!$scope.amazon.apiToken) {
-            toastMsg("Enter api Token! Required Field");
-            return;
-        }
-
-        $http.post("/amazon/auth", $scope.amazon).then((result) => { //wwww,x.com?a=a&b=b
-            result = result.data || result;
-            if (result.Buckets && result.Buckets.length)
-                toastMsg("Authenticated");
-        }).catch((err) => {
-            toastMsg(err.data)
-            console.error(err);
-        });
+        $state.go(state);
+        //learn about $state with params
+        //$state.reload()
     };
-
-    $scope.checkAuthRequest = function() {
-        $scope.toggleAuthContainer = true;
-    };
-
-    function toastMsg(msg) {
-        var toast = $mdToast.simple({ position: "bottom right" })
-            .textContent(msg)
-            .hideDelay(3000) //3000
-            .highlightAction(false);
-        $mdToast.show(toast);
-    }
 })
