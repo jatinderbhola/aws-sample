@@ -33,11 +33,13 @@ min requirement is `node`, `npm` and `express` to be installed.
 - `npm start` to run the node server
 - to use `aws s3` communication you have to set up .env variable
 
-```var AWS = require('aws-sdk');
+```
+var AWS = require('aws-sdk');
     var s3 = new AWS.S3({
     //signatureVersion: 'v4'
     accessKeyId: process.env.AWS_KEY,
     secretAccessKey: process.env.AWS_TOKEN
-});```
+}); 
+```
 
 let us know if you need help. Thank you visiting my project.
